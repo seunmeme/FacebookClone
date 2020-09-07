@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Facebook | Home</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css" >
+</head>
+<body>
+
+<body class="bg-light">
+
+<div class="container h-100">
+
+    <div class="d-md-flex flex-md-row justify-content-between mt-5 align-items-center">
+        <div class="mr-3 align-middle">
+            <h2 style="font-size: 4rem;" class="text-primary text-monospace font-weight-bolder">My facebook</h2>
+            <p style="font-size: 1.5rem;">My facebook helps to connect and share with the people in your life.</p>
+        </div>
+        <div class="card align-middle" id="singInCard" style="width: 22rem;">
+            <div class="card-body text-center">
+                <form action="UserControllerServlet" method="POST" class="mb-2 text-muted">
+                    <input type="hidden" name="command" value="login">
+
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="password" name="password" placeholder="Password">
+                    </div>
+                    <div class="form-group"></div>
+
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Sign In</button>
+                </form>
+                <div class="card-footer bg-transparent border-secondary">
+                    <button type="button" class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#singUpForm">Register</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="singUpForm" tabindex="-1" aria-labelledby="singUpForm" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <h5 class="modal-title" id="singUpForm">Sign Up</h5>
+                    <p>It's quick and easy.</p>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="UserControllerServlet" method="POST" class="mb-2 text-muted">
+                    <div class="row form-group">
+                        <input type="hidden" name="command" value="register">
+
+                        <div class="col">
+                            <input type="text" class="form-control is-valid" id="validationServer01" name="firstname" placeholder="First name" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                First name is required!
+                            </div>
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" name="lastname" placeholder="Last name" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" type="password" name="password" placeholder="Password" required>
+                    </div>
+                    <div class="form-group form-row">
+                        <div class="col">
+                            <input type="date" class="form-control"  name="dob" placeholder="Date of Birth" required>
+                        </div>
+                        <div class="col">
+                            <select name="gender" class="custom-select mr-sm-2" id="inlineFormCustomSelect" required>
+                                <option selected>Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-success btn-lg btn-block">Sign Up</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>  </body>
+
+</body>
+</html>
