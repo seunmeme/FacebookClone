@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>My Facebook | Posts </title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+</head>
+<body class="bg-light">
+<header class="site-header">
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand mr-4" href="#" th:href="@{/home}">My facebook</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarToggle">
+                <div class="navbar-nav mr-auto">
+                    <a class="nav-item nav-link" href="#" th:href="@{/home}">Home</a>
+                    <a class="nav-item nav-link" href="#" th:href="@{/home}">About</a>
+                </div>
+
+                <!-- Navbar Right Side -->
+                <div class="navbar-nav">
+                    <button type="button" class="btn btn-success btn-sm btn-block" data-toggle="modal" data-target="#newPost">Add New Post</button>
+                    <a class="nav-item nav-link" href="#" th:href="@{/home}">Profile</a>
+                    <a class="nav-item nav-link" href="#" th:href="@{/}">Logout</a>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+<main class="container mt-4">
+    <div class="row">
+        <div class="col-md-8">
+                <div class="card mb-2" th:each="post: ${posts}">
+
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <p th:text="${post.content}"></p>
+                            <footer class="blockquote-footer">posted by
+                                <cite title="Source Title" th:text= ${post.user["firstname"]}></cite>
+                                <cite title="Source Title" th:text= ${post.user["lastname"]}></cite>
+                            </footer>
+                        </blockquote>
+
+                    </div>
+
+                    <div class="d-flex justify-content-end">
+                        <a class="btn btn-secondary btn-sm mt-1 mb-1 mr-2" data-toggle="modal" data-target="#newComment"> Comment </a>
+                        <a class="btn btn-danger btn-sm mt-1 mb-1 mr-2" href=""> Delete </a>
+                    </div>
+
+                </div>
+
+        </div>
+        <div class="col-md-4">
+            <div class="content-section">
+                <h3>Sidebar</h3>
+                <p class='text-muted'>Feeds.
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-light">Latest Posts</li>
+                    <li class="list-group-item list-group-item-light">Announcements</li>
+                    <li class="list-group-item list-group-item-light">Calendars</li>
+                </ul>
+                </p>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+<!-- Add Post Modal -->
+<div class="modal fade" id="newPost" tabindex="-1" aria-labelledby="newPost" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <h5 class="modal-title" id=addPost>Add New Post</h5>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="#" th:action="@{/addPost}" th:object="${post}" method="POST" class="mb-2 text-muted">
+
+                    <div class="form-group">
+                        <textarea class="form-control" th:field="*{content}" id="exampleFormControlTextarea1" rows="5" placeholder="What's on your mind?"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-success btn-lg btn-block">Add Post</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Add Comment Modal -->
+<div class="modal fade" id="newComment" tabindex="-1" aria-labelledby="newComment" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <h5 class="modal-title" id=addComment>Add a comment</h5>
+                </div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="#" th:action="@{/addPost}" th:object="${post}" method="POST" class="mb-2 text-muted">
+
+                    <div class="form-group">
+                        <textarea class="form-control" th:field="*{content}" rows="5" placeholder="Write your comment"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-success btn-lg btn-block">Add Comment</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="fixed-bottom d-sm-flex h-10 justify-content-center mb-3">Designed by Solomon Odewale. All rights reserved &copy;2020.</div>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>  </body>
+
+</body>
+</html>
