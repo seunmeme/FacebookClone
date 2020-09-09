@@ -5,17 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61f9108d-a416-4473-b4e2-4efe448cba97" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/seunmeme/facebook_clone/FacebookCloneApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/seunmeme/facebook_clone/FacebookCloneApplicationTests.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../facebook_clone/src/main/java/com/seunmeme/facebook_clone/controller/FbController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../facebook_clone/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../facebook_clone/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../facebook_clone/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../facebook_clone/src/main/java/com/seunmeme/facebook_clone/controller/UserControler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../facebook_clone/src/main/java/com/seunmeme/facebook_clone/model/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../facebook_clone/src/main/java/com/seunmeme/facebook_clone/model/Comment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../facebook_clone/src/main/java/com/seunmeme/facebook_clone/model/Post.java" beforeDir="false" afterPath="$PROJECT_DIR$/../facebook_clone/src/main/java/com/seunmeme/facebook_clone/model/Post.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../facebook_clone/src/main/java/com/seunmeme/facebook_clone/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../facebook_clone/src/main/java/com/seunmeme/facebook_clone/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../facebook_clone/src/main/java/com/seunmeme/facebook_clone/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../facebook_clone/src/main/java/com/seunmeme/facebook_clone/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../facebook_clone/src/main/java/com/seunmeme/facebook_clone/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../facebook_clone/src/main/java/com/seunmeme/facebook_clone/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../facebook_clone/src/main/java/com/seunmeme/facebook_clone/service/serviceImpl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../facebook_clone/src/main/java/com/seunmeme/facebook_clone/service/serviceImpl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../facebook_clone/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../facebook_clone/src/main/resources/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../facebook_clone/src/main/resources/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
