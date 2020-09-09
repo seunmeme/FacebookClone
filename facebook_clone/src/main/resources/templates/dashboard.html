@@ -45,16 +45,45 @@
                             <footer class="blockquote-footer">posted by
                                 <cite title="Source Title" th:text= ${post.user["firstname"]}></cite>
                                 <cite title="Source Title" th:text= ${post.user["lastname"]}></cite>
+
                             </footer>
                         </blockquote>
 
                     </div>
 
                     <div class="d-flex justify-content-end">
-                        <a class="btn btn-secondary btn-sm mt-1 mb-1 mr-2" data-toggle="modal" data-target="#newComment"> Comment </a>
+                        <a class="btn btn-secondary btn-sm mt-1 mb-1 mr-2" data-toggle="modal" th:attr="data-target=${'#newComment' + post.id}"> Comment </a>
                         <a class="btn btn-danger btn-sm mt-1 mb-1 mr-2" href=""> Delete </a>
+
+                    <!-- Add Comment Modal -->
+                    <div class="modal fade" th:attr="id=${'newComment' + post.id}, aria-labelledby=${'newComment' + post.id}" tabindex="-1" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <div>
+                                        <h5 class="modal-title" id=addComment>Add a comment</h5>
+                                    </div>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form th:attr="action=${'addComment/' + post.id }"  th:object="${comment}" method="POST" class="mb-2 text-muted">
+
+                                        <div class="form-group">
+                                            <textarea class="form-control" th:field="*{content}" rows="5" placeholder="Write your comment"></textarea>
+                                        </div>
+
+
+                                        <button type="submit" class="btn btn-success btn-lg btn-block">Add Comment</button>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
 
+                </div>
                 </div>
 
         </div>
@@ -100,36 +129,6 @@
         </div>
     </div>
 </div>
-
-<!-- Add Comment Modal -->
-<div class="modal fade" id="newComment" tabindex="-1" aria-labelledby="newComment" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div>
-                    <h5 class="modal-title" id=addComment>Add a comment</h5>
-                </div>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="#" th:action="@{/addPost}" th:object="${post}" method="POST" class="mb-2 text-muted">
-
-                    <div class="form-group">
-                        <textarea class="form-control" th:field="*{content}" rows="5" placeholder="Write your comment"></textarea>
-                    </div>
-
-                    <button type="submit" class="btn btn-success btn-lg btn-block">Add Comment</button>
-                </form>
-            </div>
-
-        </div>
-    </div>
-</div>
-
-
-
 
 
 <div class="fixed-bottom d-sm-flex h-10 justify-content-center mb-3">Designed by Solomon Odewale. All rights reserved &copy;2020.</div>

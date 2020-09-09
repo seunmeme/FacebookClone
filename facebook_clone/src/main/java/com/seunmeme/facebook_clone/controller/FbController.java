@@ -3,18 +3,18 @@ package com.seunmeme.facebook_clone.controller;
 import com.seunmeme.facebook_clone.model.Comment;
 import com.seunmeme.facebook_clone.model.Post;
 import com.seunmeme.facebook_clone.model.User;
+import com.seunmeme.facebook_clone.service.CommentService;
 import com.seunmeme.facebook_clone.service.PostService;
 import com.seunmeme.facebook_clone.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpSession;
-import java.util.stream.Stream;
-
-
 
 @Controller
 public class FbController {
@@ -25,15 +25,20 @@ public class FbController {
     @Autowired
     private PostService postService;
 
+    @Autowired
+    private CommentService commentService;
+
 
     @GetMapping("/home")
     public String viewDashboard(Model model){
         Post post = new Post();
+        Comment comment = new Comment();
         Iterable<Post> posts = postService.getPosts();
 //        add posts to the model
         model.addAttribute("posts", posts);
         model.addAttribute("post", post);
-        Stream.of(posts).forEach(p -> System.out.println(p));
+        model.addAttribute("comment", comment);
+
         return "dashboard";
     }
 
@@ -51,7 +56,7 @@ public class FbController {
     public String addUser(User user, HttpSession session) {
         User theUser = userService.findByEmail(user.getEmail());
 //        if the user already exists, return to home page
-        if(theUser != null){
+        if(userService.existsByEmail(user.getEmail())){
             return "redirect:/";
         }else{
             userService.register(user);
@@ -85,13 +90,19 @@ public class FbController {
 
     }
 
-    @PostMapping("/comment")
-    public String addComment(Comment comment, Post post, HttpSession session) {
+    @PostMapping(value="/addComment/{postId}")
+    public String addComment(Comment comment, HttpSession session, @PathVariable String postId) {
+        System.out.println(postId);
         User user = (User)session.getAttribute("user");
-        post.setContent("hello");
+        System.out.println(user);
+
+        Post post = postService.getPostById(Long.parseLong(postId));
+        System.out.println(postId);
+        System.out.println(post);
+
         comment.setUser(user);
         comment.setPost(post);
-        postService.addPost(post);
+        commentService.addComment(comment);
         return "redirect:/home";
 
     }

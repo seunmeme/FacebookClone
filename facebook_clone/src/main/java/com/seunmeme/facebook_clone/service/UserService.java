@@ -5,5 +5,6 @@ import com.seunmeme.facebook_clone.model.User;
 public interface UserService {
     public void register(User user);
     public User findByEmail(String email);
+    public boolean existsByEmail(String email);
 
 }

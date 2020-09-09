@@ -23,11 +23,11 @@ public class Comment {
     @Column(name="dateCreated", nullable=false, updatable=false)
     private LocalDateTime dateCreated = LocalDateTime.now();
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.MERGE, fetch= FetchType.EAGER)
     @JoinColumn(name="userId", referencedColumnName = "id")
     private User user;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.MERGE, fetch= FetchType.EAGER)
     @JoinColumn(name="postId", referencedColumnName = "id")
     private Post post;
 }

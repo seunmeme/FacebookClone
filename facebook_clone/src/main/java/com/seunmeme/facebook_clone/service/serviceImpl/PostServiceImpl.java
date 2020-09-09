@@ -22,4 +22,12 @@ public class PostServiceImpl implements PostService {
     public Iterable<Post> getPosts() {
         return postRepository.findAll();
     }
+
+    @Override
+    public Post getPostById(Long id){
+        return postRepository.findPostById(id);
+    }
+
+
+
 }
