@@ -29,6 +29,7 @@ public class FbController {
     private CommentService commentService;
 
 
+//    Route for showing dashboard
     @GetMapping("/home")
     public String viewDashboard(Model model){
         Post post = new Post();
@@ -42,7 +43,7 @@ public class FbController {
         return "dashboard";
     }
 
-
+//Route for landing page
     @GetMapping("/")
     public String viewHomePage(Model model){
         User user = new User();
@@ -51,7 +52,7 @@ public class FbController {
         return "index";
     }
 
-
+// Route for registration
     @PostMapping("/register")
     public String addUser(User user, HttpSession session) {
         User theUser = userService.findByEmail(user.getEmail());
@@ -66,7 +67,7 @@ public class FbController {
 
     }
 
-
+//Route for user login
     @PostMapping("/login")
     public String login(User user, HttpSession session){
         try {
@@ -80,6 +81,7 @@ public class FbController {
         return "redirect:/home";
     }
 
+//    Route for adding post
     @PostMapping("/addPost")
     public String addPost(Post post, HttpSession session) {
         User user = (User)session.getAttribute("user");
@@ -90,6 +92,7 @@ public class FbController {
 
     }
 
+//    Route for adding comment
     @PostMapping(value="/addComment/{postId}")
     public String addComment(Comment comment, HttpSession session, @PathVariable String postId) {
         System.out.println(postId);
