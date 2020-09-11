@@ -12,10 +12,14 @@ public class PostServiceImpl implements PostService {
     @Autowired
     PostRepository postRepository;
 
-
     @Override
     public void addPost(Post post) {
         postRepository.save(post);
+    }
+
+    @Override
+    public void deletePost(Post post) {
+        postRepository.delete(post);
     }
 
     @Override
@@ -27,7 +31,5 @@ public class PostServiceImpl implements PostService {
     public Post getPostById(Long id){
         return postRepository.findPostById(id);
     }
-
-
 
 }

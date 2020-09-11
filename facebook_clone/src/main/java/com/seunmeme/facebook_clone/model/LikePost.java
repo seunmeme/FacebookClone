@@ -15,11 +15,11 @@ public class LikePost {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.MERGE, fetch= FetchType.EAGER)
     @JoinColumn(name="userId", referencedColumnName = "id")
     private User user;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.MERGE, fetch= FetchType.EAGER)
     @JoinColumn(name="postId", referencedColumnName = "id")
     private Post post;
 }

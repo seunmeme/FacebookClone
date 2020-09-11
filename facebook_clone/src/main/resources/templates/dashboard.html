@@ -52,10 +52,40 @@
                     </div>
 
                     <div class="d-flex justify-content-end">
-                        <a class="btn btn-secondary btn-sm mt-1 mb-1 mr-2" data-toggle="modal" th:attr="data-target=${'#newComment' + post.id}"> Comment </a>
-                        <a class="btn btn-danger btn-sm mt-1 mb-1 mr-2" href=""> Delete </a>
+                        <a class="btn btn-primary btn-sm mt-1 mb-1 mr-2" data-toggle="modal" th:attr="data-target=${'#newComment' + post.id}"> Comment </a>
+                        <a class="btn btn-secondary btn-sm mt-1 mb-1 mr-2" data-toggle="modal" th:attr="data-target=${'#updatePost' + post.id}"> Update Post </a>
+                        <a class="btn btn-danger btn-sm mt-1 mb-1 mr-2" href="#" th:href="${'delete/' + post.id }"> Delete </a>
+                        <a class="btn btn-success btn-sm mt-1 mb-1 mr-2" href="#" th:attr="href=${'likePost/' + post.id }"> Like </a>
 
-                    <!-- Add Comment Modal -->
+                        <!-- Update Post Modal -->
+                        <div class="modal fade" th:attr="id=${'updatePost' + post.id}, aria-labelledby=${'newComment' + post.id}" tabindex="-1" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <div>
+                                            <h5 class="modal-title" id=updatePost>Edit Post</h5>
+                                        </div>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form th:attr="action=${'updatePost/' + post.id }"  method="POST" class="mb-2 text-muted">
+
+                                            <div class="form-group">
+                                                <textarea class="form-control" th:text= ${post.content} rows="5" name="content"></textarea>
+                                            </div>
+
+
+                                            <button type="submit" class="btn btn-success btn-lg btn-block">Update Post</button>
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Add Comment Modal -->
                     <div class="modal fade" th:attr="id=${'newComment' + post.id}, aria-labelledby=${'newComment' + post.id}" tabindex="-1" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
@@ -87,6 +117,7 @@
                 </div>
 
         </div>
+
         <div class="col-md-4">
             <div class="content-section">
                 <h3>Sidebar</h3>

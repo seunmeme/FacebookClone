@@ -3,20 +3,29 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="61f9108d-a416-4473-b4e2-4efe448cba97" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../facebook_clone/src/main/java/com/seunmeme/facebook_clone/controller/FbController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../facebook_clone/src/main/java/com/seunmeme/facebook_clone/controller/FbController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../facebook_clone/src/main/java/com/seunmeme/facebook_clone/model/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/../facebook_clone/src/main/java/com/seunmeme/facebook_clone/model/Comment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../facebook_clone/src/main/java/com/seunmeme/facebook_clone/repository/PostRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../facebook_clone/src/main/java/com/seunmeme/facebook_clone/repository/PostRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../facebook_clone/src/main/java/com/seunmeme/facebook_clone/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../facebook_clone/src/main/java/com/seunmeme/facebook_clone/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../facebook_clone/src/main/java/com/seunmeme/facebook_clone/service/CommentService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../facebook_clone/src/main/java/com/seunmeme/facebook_clone/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../facebook_clone/src/main/java/com/seunmeme/facebook_clone/service/PostService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../facebook_clone/src/main/java/com/seunmeme/facebook_clone/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../facebook_clone/src/main/java/com/seunmeme/facebook_clone/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../facebook_clone/src/main/java/com/seunmeme/facebook_clone/service/serviceImpl/PostServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../facebook_clone/src/main/java/com/seunmeme/facebook_clone/service/serviceImpl/PostServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../facebook_clone/src/main/java/com/seunmeme/facebook_clone/service/serviceImpl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../facebook_clone/src/main/java/com/seunmeme/facebook_clone/service/serviceImpl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../facebook_clone/src/main/resources/templates/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/../facebook_clone/src/main/resources/templates/dashboard.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../facebook_clone/src/test/java/com/seunmeme/facebook_clone/FacebookCloneApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/../facebook_clone/src/test/java/com/seunmeme/facebook_clone/FacebookCloneApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,19 +68,6 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="FacebookCloneApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="FaceBookClone" />
       <extension name="coverage">
@@ -101,11 +97,23 @@
       <updated>1599426672142</updated>
       <workItem from="1599426674599" duration="846000" />
       <workItem from="1599512570351" duration="5179000" />
+      <workItem from="1599809625675" duration="614000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state width="1218" height="174" key="GridCell.Tab.0.bottom" timestamp="1599431665348">
